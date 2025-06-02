@@ -1,0 +1,14 @@
+{% extends "food/base.html" %}
+{% load static %}
+
+{% block body %}
+    <ul>
+        {% for item in item_list %}
+            <li>
+                <a href="{% url 'detail' item.id %}">{{ item.id }} — {{ item.item_name }}</a>
+            </li>
+        {% empty %}
+            <li>No items found.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
