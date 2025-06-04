@@ -2,13 +2,18 @@
 {% load static %}
 
 {% block body %}
-    <ul>
-        {% for item in item_list %}
-            <li>
-                <a href="{% url 'detail' item.id %}">{{ item.id }} — {{ item.item_name }}</a>
-            </li>
-        {% empty %}
-            <li>No items found.</li>
-        {% endfor %}
-    </ul>
+{% for item in item_list %}
+    <div class="row mb-4">
+        <div class="col-md-3 offset-md-2">
+            {% if item.item_image %}
+             <img src="{{ item.item_image.url }}" alt="{{ item.item_name }}" height="150px" />
+              {% endif %}
+        </div>
+        <div class="col-md-4">
+           
+        </div>
+        <div class="col-md-2">
+           
+    </div>
+{% endfor %}
 {% endblock %}

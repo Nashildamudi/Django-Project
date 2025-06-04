@@ -7,5 +7,6 @@ class Item(models.Model):
         return self.item_name
 
     item_name = models.CharField(max_length=200)
-    item_desc = models.CharField(max_length=200)
+    item_desc = models.TextField()
     item_price = models.IntegerField()
+    item_image = models.ImageField(upload_to='images/', default='images/pl.png')
