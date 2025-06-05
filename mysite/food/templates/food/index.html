@@ -6,14 +6,17 @@
     <div class="row mb-4">
         <div class="col-md-3 offset-md-2">
             {% if item.item_image %}
-             <img src="{{ item.item_image.url }}" alt="{{ item.item_name }}" height="150px" />
-              {% endif %}
+                <img src="{{ item.item_image.url }}" alt="{{ item.item_name }}" height="150px" />
+            {% endif %}
         </div>
         <div class="col-md-4">
-           
+            <h3>{{ item.item_name }}</h3>
+            <h5>{{ item.item_desc }}</h5>
+            <h6>${{ item.item_price }}</h6>
         </div>
         <div class="col-md-2">
-           
-    </div>
+            <a href="{% url 'food:detail' item.id %}" class="btn btn-success">Details</a>
+        </div>
+    </div>  <!-- This closing div was missing -->
 {% endfor %}
 {% endblock %}
